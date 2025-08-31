@@ -1,7 +1,6 @@
 <!-- Expressions -->
 <poml>
-  <let name="name">Alice</let>
-  <p>Hello, {{name}}!</p>
+<p>Hello, Caramel!</p>
 </poml>
 
 <!-- Usage in Attributes -->
@@ -11,6 +10,11 @@
 </poml>
 
 <!-- Expression Usages -->
+<poml>
+  <let name="name">Caramel</let>
+  <p>Hello, {{name}}!</p>
+</poml>
+
 <poml>
   <!-- 1. Variables -->
   <let name="variableName" value="'World'" />
@@ -45,13 +49,12 @@
   <let name="isAdmin" value="true" />
   <p>{{isAdmin ? "Welcome, Admin!" : "Access Denied"}}</p>
 
-  <!-- 8. Loop Variables -->
-  <poml>
-  <u>
-    <p for="task in ['Task A', 'Task B', 'Task C']">
-      Task {{loop.index}}: {{task}}
-    </p>
-  </u>
+<!-- 8. Loop Variables -->
+<u>
+  <p for="task in ['Task A', 'Task B', 'Task C']">
+    Task {{loop.index}}: {{task}}
+  </p>
+</u>
 </poml>
 
 <!-- Syntax 1: Setting a variable from a value -->

@@ -1,0 +1,129 @@
+<poml>
+    <role>You are a Senior Angular Developer.</role>
+    <task>Develop a new feature for the application.</task>
+    <Audio src="path/to/audio.mp3" />
+    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiqut5QCUhacIrAoIJpcPwnRbpQfMVm_lDQw&s" alt="Image description" position="bottom" />
+    <Document src="sample.docx" multimedia="false"/>
+    <hint>Alice first purchased 4 apples and then 3 more, so she has 7 apples in total.</hint>
+
+
+  <!-- Angular-focused task: a feature that displays a protein recipe -->
+  <task>
+    Implement a "Protein Recipe" feature as an Angular deliverable:
+    <list>
+  <item>Create a feature module (ProteinRecipeModule) with route lazy-loading.</item>
+      <item>Implement components: RecipeListComponent, RecipeDetailComponent, RecipeEditorComponent (use OnPush).</item>
+      <item>Define TypeScript interfaces: Recipe, Ingredient, RecipeStep, Rating; keep API contract documented.</item>
+      <item>Implement RecipeService for HTTP integration and provide a mock data provider for local/dev mode.</item>
+      <item>Manage state (NgRx or local BehaviorSubject) for selected recipe and user notes; prefer immutability.</item>
+      <item>Use Reactive Forms for notes/ratings and validate input; persist via service.</item>
+      <item>Handle network/errors with interceptors, retry/backoff patterns, and caching strategies (Service Worker or in-memory cache).</item>
+      <item>Ensure accessibility (semantic HTML, ARIA attributes, keyboard nav) and responsive UI; add i18n keys.</item>
+      <item>Optimize performance: lazy load images, use trackBy, OnPush change detection, and limit heavy RxJS operators.</item>
+      <item>Add Storybook stories for key components and document public inputs/outputs.</item>
+      <item>Write unit tests (Karma/Jest + TestBed) for components/services and integration tests; add E2E scenarios (Cypress).</item>
+      <item>Prepare CI/CD checks: lint, type-check, unit tests, build; include deployment notes and feature-flag rollout plan.</item>
+      <item>Provide README with development steps, API mocks, sample payloads, and acceptance criteria for QA.</item>
+    </list>
+  </task>
+
+  <!-- Angular-focused task: convert travel planning into a feature rollout plan -->
+  <task>
+    Plan and schedule a "Travel Planner" feature rollout:
+    <list>
+      <item>Design DestinationSelectorComponent and ItineraryComponent.</item>
+      <item>Define ItineraryService to provide daily schedules, data sources, and caching.</item>
+      <item>Plan duration, API endpoints, and fallback/mock data for offline mode.</item>
+      <item>Create a multi-day schedule UI and outline accessibility and localization needs.</item>
+    </list>
+  </task>
+
+  <h>Section Title</h>
+  <section>
+    <h>Sub-section Title</h>  <!-- Nested header -->
+    <p>Sub-section details</p>
+  </section>
+
+  <stepwise-instructions>
+    <list>
+      <item>Understand the feature requirements and acceptance criteria.</item>
+      <item>Design components, services, and data contracts (interfaces).</item>
+      <item>Implement component(s) and service(s) with Angular best practices (RxJS, OnPush, DI).</item>
+      <item>Add unit and integration tests; prepare basic E2E scenarios.</item>
+      <item>Prepare a rollout plan: staging, feature flags, and monitoring.</item>
+    </list>
+  </stepwise-instructions>
+
+<example>
+  <input>What is the capital of France?</input>
+  <output>Paris</output>
+</example>
+
+  <p><b>Task:</b>Do something.
+  This text is <u>underlined</u>
+  <s>This messages is removed.</s></p>
+
+  <cp caption="Constraints">
+  <list>
+    <item>Do not exceed 1000 tokens.</item>
+    <item>Please use simple words.</item>
+  </list>
+  </cp>
+
+  <code inline="true">const x = 42;</code>
+  <code lang="javascript">
+    const x = 42;
+  </code>
+
+  <input>What is the capital of France?</input>
+  <input>What is the capital of {{country}}?</input>
+  <output>The capital of France is Paris.</output>
+  <output>The capital of {{country}} is {{capital}}.</output>
+
+  <examples chat={{true}}>
+  <example>
+    <input>What is the capital of France?</input>
+    <output>Paris</output>
+  </example>
+  <example>
+    <input>What is the capital of Germany?</input>
+    <output>Berlin</output>
+  </example>
+</examples>
+
+
+
+  <task>Summarize the following passage in a single sentence.</task>
+<example>
+  <input caption="Passage">The sun provides energy for life on Earth through processes like photosynthesis.</input>
+  <output caption="Summary">The sun is essential for energy and life processes on Earth.</output>
+</example>
+
+    <br/>
+    <!-- Display content from a URL: -->
+    <webpage url="https://hereandnowai.com" />
+
+    <!-- Extract only specific content using a selector: -->
+    <webpage url="https://hereandnowai.com" selector="main article" />
+
+    <!-- Convert HTML to structured POML components: -->
+    <webpage url="https://hereandnowai.com" extractText="false" />
+
+    <table records="{{[{ name: 'Deepti', age: 20 }, { name: 'Balaji', age: 30 }]}}" />
+  
+    <ToolRequest id="123" name="search" parameters={{ query: "hello" }} />
+    
+    <ToolResponse id="123" name="search">
+        <Paragraph>Search results for "hello":</Paragraph>
+            <List>
+                <ListItem>Result 1</ListItem>
+                <ListItem>Result 2</ListItem>
+            </List>
+    </ToolResponse>
+
+    <system-msg>Answer concisely.</system-msg>
+    <user-msg>What is the capital of France?</user-msg>
+    <ai-msg>Paris</ai-msg>
+
+
+</poml>
