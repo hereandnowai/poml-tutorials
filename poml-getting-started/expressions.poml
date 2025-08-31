@@ -1,0 +1,66 @@
+<!-- Expressions -->
+<poml>
+  <let name="name">Alice</let>
+  <p>Hello, {{name}}!</p>
+</poml>
+
+<!-- Usage in Attributes -->
+<poml>
+  <let name="index">1</let>
+  <task caption="Task #{{index}}">This is task No. {{index}}.</task>
+</poml>
+
+<!-- Expression Usages -->
+<poml>
+  <!-- 1. Variables -->
+  <let name="variableName" value="'World'" />
+  <p>Hello, {{variableName}}!</p>
+
+  <!-- 2. Arithmetic -->
+  <let name="a" value="5" />
+  <let name="b" value="3" />
+  <p>5 + 3 = {{a + b}}</p>
+  <p>5 - 3 = {{a - b}}</p>
+  <p>5 * 3 = {{a * b}}</p>
+  <p>5 / 3 = {{a / b}}</p>
+
+  <!-- 3. String Concatenation -->
+  <let name="firstName" value="'Alice'" />
+  <let name="lastName" value="'Johnson'" />
+  <p>Full Name: {{firstName + " " + lastName}}</p>
+
+  <!-- 4. Array Access -->
+  <let name="myArray" value='["red", "green", "blue"]' />
+  <p>First color: {{myArray[0]}}</p>
+
+  <!-- 5. Object Property Access -->
+  <let name="myObject" value='{ "propertyName": "AI Magic" }' />
+  <p>Property Value: {{myObject.propertyName}}</p>
+
+  <!-- 6. Function Calls -->
+  <let name="double" value="(x) => x * 2" />
+  <p>Double of 4 is {{double(4)}}</p>
+
+  <!-- 7. Ternary Operator -->
+  <let name="isAdmin" value="true" />
+  <p>{{isAdmin ? "Welcome, Admin!" : "Access Denied"}}</p>
+
+  <!-- 8. Loop Variables -->
+  <poml>
+  <u>
+    <p for="task in ['Task A', 'Task B', 'Task C']">
+      Task {{loop.index}}: {{task}}
+    </p>
+  </u>
+</poml>
+
+<!-- Syntax 1: Setting a variable from a value -->
+<poml>
+  <let name="greeting">Hello, world!</let>
+  <p>{{greeting}}</p>
+</poml>
+
+<poml>
+  <let name="greeting" value="'Hello, world!'"/>
+  <p>{{greeting}}</p>
+</poml>

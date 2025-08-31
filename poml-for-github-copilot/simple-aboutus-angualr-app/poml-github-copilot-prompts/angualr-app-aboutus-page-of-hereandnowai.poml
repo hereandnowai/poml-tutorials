@@ -1,0 +1,144 @@
+<!-- The following is the content for the about us page that is going to built using angular 16 -->
+<!-- logo and contact details of here and now ai is found in the branding.json file -->
+
+<poml>
+  <role>
+  You are a dedicated Angular developer who thrives on leveraging the absolute latest features of the framework (up to Angular v16) to build cutting-edge applications. You are currently immersed in Angular v16, adopting standalone components for streamlined architecture, reactive forms for robust form handling, and change detection strategies for performance optimization. You value clean, efficient, and maintainable code, ensuring scalability and readability across all projects.
+  </role>
+
+  <task>
+    <p><b>Task 1:</b> Create an Angular 16 standalone component for the About Us page.</p>
+    <p><b>Task 2:</b> The component should display the company logo and play an introductory audio clip.</p>
+    <p><b>Task 3:</b> Ensure the component follows best practices for performance and maintainability.</p>
+    <p><b>Task 4:</b> Implement a toggle button to play and pause the audio.</p>
+    <p><b>Task 5:</b> Include team member profiles.</p>
+    <p><b>Task 6:</b> Highlight company achievements.</p>
+    <p><b>Task 7:</b> Add customer testimonials.</p>
+    <p><b>Task 8:</b> Integrate social media links.</p>
+    <p><b>Task 9:</b> Ensure mobile responsiveness.</p>
+    <p><b>Task 10:</b> Optimize for SEO.</p>
+    <p><b>Task 11:</b> Use branding colors and fonts.</p>
+    <p><b>Task 12:</b> Add multimedia content.</p>
+    <p><b>Task 13:</b> Include a call-to-action section.</p>
+    <p><b>Task 14:</b> Provide a downloadable company brochure.</p>
+    <p><b>Task 15:</b> Add a FAQ section.</p>
+    <p><b>Task 16:</b> Include a map to the company location</p>
+    <p><b>Task 17:</b> Ensure accessibility compliance.</p>
+    <p><b>Task 18:</b> Add a newsletter signup form.</p>
+    <p><b>Task 19:</b> Contact Information</p>
+  </task>
+
+  <img src="logo.png" alt="Logo of HERE AND NOW AI" />
+  <Audio src="intro.mp3" controls="true" />
+
+  <output-format>
+  ## Examples  
+These are modern examples of how to write an Angular 16 component.  
+
+```ts
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: '{{tag-name}}-root',
+  templateUrl: '{{tag-name}}.html',
+  styleUrls: ['./{{tag-name}}.css'],
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class {{ClassName}} {
+  isServerRunning = true;
+
+  toggleServerStatus() {
+    this.isServerRunning = !this.isServerRunning;
+  }
+}
+```
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+button {
+  margin-top: 10px;
+}
+```
+
+```html
+<section class="container">
+  <span *ngIf="isServerRunning; else stopped">Yes, the server is running</span>
+  <ng-template #stopped>
+    <span>No, the server is not running</span>
+  </ng-template>
+  <button (click)="toggleServerStatus()">Toggle Server Status</button>
+</section>
+```
+
+## Resources  
+- [Angular Components](https://angular.io/guide/component-overview)  
+- [Angular Templates](https://angular.io/guide/template-syntax)  
+- [Angular Dependency Injection](https://angular.io/guide/dependency-injection)  
+- [Reactive Forms](https://angular.io/guide/reactive-forms)  
+
+## Best Practices & Style Guide  
+
+### Coding Style Guide  
+Refer to the [official Angular style guide](https://angular.io/guide/styleguide).  
+
+### TypeScript Best Practices  
+- Use strict type checking  
+- Prefer type inference when the type is obvious  
+- Avoid the `any` type; use `unknown` when the type is uncertain  
+
+### Angular Best Practices  
+- Prefer standalone components (`standalone: true`) over `NgModules` for new code, but `NgModules` are still valid and widely used  
+- Use `ChangeDetectionStrategy.OnPush` for performance optimization  
+- Implement lazy loading for feature modules and routes  
+- Use `NgOptimizedImage` (introduced in v15) for static images where possible  
+- Use `@HostBinding` and `@HostListener` decorators where needed for host element bindings  
+
+### Components  
+- Keep components small and focused on a single responsibility  
+- Use `@Input()` and `@Output()` decorators for data flow between components  
+- Prefer `EventEmitter` for outputs  
+- Prefer inline templates for very small components; otherwise, use external HTML and CSS files  
+- Prefer Reactive Forms (`FormGroup`, `FormControl`, `FormBuilder`) over Template-driven forms for better scalability and testing  
+- Use `ngClass` and `ngStyle` carefully for dynamic styling  
+
+### State Management  
+- Use RxJS (Subjects, BehaviorSubjects, Observables) for managing state and communication between services/components  
+- Use `async` pipe in templates to handle observables cleanly  
+- Keep state management predictable and side-effect free  
+
+### Templates  
+- Use `*ngIf`, `*ngFor`, `*ngSwitch` for control flow in templates  
+- Keep templates simple and avoid placing complex logic inside them  
+- Use built-in Angular pipes (`date`, `currency`, `json`, etc.)  
+- Use the `async` pipe to subscribe/unsubscribe from observables automatically  
+
+### Services  
+- Design services with a single responsibility  
+- Use `@Injectable({ providedIn: 'root' })` for singleton services  
+- Use constructor injection for dependency injection (DI)
+  </output-format>
+
+  <h level="1">About Us</h>
+  <let name="companyName" value="'HERE AND NOW AI'" />
+  <let name="services" value="' AI-driven solutions '" />
+  <p>Welcome to <b>{{companyName}}</b>. We are dedicated to providing the best{{ services }} to all.</p>
+
+  <let name="branding" src="branding.json" />
+  <p>Company Name: {{branding.brand.organizationName}}
+  <br/>Website: {{branding.brand.website}}
+  <br/>Email: {{branding.brand.email}}
+  <br/>Mobile: {{branding.brand.mobile}}
+  <br/>Slogan: {{branding.brand.slogan}}
+  <br/>Founded: {{branding.brand.founded}}
+  <br/>Headquarters: {{branding.brand.headquarters}}</p>
+  <p>Colors: {{branding.brand.colors.primary}}, {{branding.brand.colors.secondary}}</p>
+  <table records="{{[{ label: 'Logo URL', url: branding.brand.logo.title }, { label: 'Avatar URL', url: branding.brand.chatbot.avatar }]}}" syntax="markdown" />
+</poml>
