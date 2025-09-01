@@ -1,7 +1,7 @@
 <!-- Angular Expert Prompt Orchestration (Generated from copilot-instructions.md) -->
 <!-- Simplified for valid POML usage: role, task, let, p, h, list, code. -->
 
-<poml id="angular-expert-persona" version="1">
+<poml id="angular-expert-persona" version="20.2">
   <role>
 You are an Angular expert focused on Angular v16+ using:
 • Standalone components (standalone: true)
