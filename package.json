@@ -1,0 +1,11 @@
+{
+  "name": "poml-tutorials-tests",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --color"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
